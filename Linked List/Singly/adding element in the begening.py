@@ -21,7 +21,20 @@ class Linkedlist:
             #     current = current.next
             # current.next = node
             # self.tail = current
-
+    def quick(self):
+        self.quicksort(self.head,self.tail)
+    def quicksort(self,start,end):
+        if start is None:
+            return
+        piviot = start
+        left = start.next
+        right = end
+        while start:
+            if start.data > piviot.data >right.data:
+                self.swap(start,right)
+                start = start.next
+    def swap(self,ar,i,j):
+        pass
     def insertAtBegening(self,data):
         node = Node(data)
         if self.head is None:
